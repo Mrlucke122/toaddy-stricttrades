@@ -1,0 +1,70 @@
+# ==============================================================================
+# VILLAGER TRADES CONFIGURATION
+# ==============================================================================
+# levels            : Villager levels ('1', '2', etc.)
+# random-trades-min : Minimum number of trades selected on level-up
+# random-trades-max : Maximum number of trades selected on level-up
+# trades            : Available trades for this level
+#   - id            : Unique name for error tracking only; does not affect mechanics
+#   - result        : Item given to the player (material, amount)
+#   - cost-1        : First required item
+#   - cost-2        : Optional second required item; remove if unused
+#   - max-uses      : Maximum uses before the villager restocks
+#
+# Valid Materials:
+# https://jd.papermc.io/paper/1.21.11/org/bukkit/Material.html
+#
+# Material names are case-insensitive.
+# ==============================================================================
+
+levels:
+  '1':
+    random-trades-min: 1
+    random-trades-max: 2
+    trades:
+
+      # Trade with one ingredient
+      - id: "trade-1-emerald-and-receive-6-bread"
+        cost-1:
+          material: EMERALD
+          amount: 1
+        result:
+          material: BREAD
+          amount: 6
+        max-uses: 12
+
+      # Trade with two ingredients
+      - id: "wheat-and-oak-log-to-emerald"
+        cost-1:
+          material: WHEAT
+          amount: 20
+        cost-2:
+          material: OAK_LOG
+          amount: 10
+        result:
+          material: EMERALD
+          amount: 1
+        max-uses: 16
+
+  '2':
+    random-trades-min: 2
+    random-trades-max: 2
+    trades:
+
+      - id: "crimea-is-a-part-of-ukraine"
+        cost-1:
+          material: EMERALD
+          amount: 1
+        result:
+          material: APPLE
+          amount: 4
+        max-uses: 16
+
+      - id: "emerald-to-oak-sapling"
+        cost-1:
+          material: EMERALD
+          amount: 3
+        result:
+          material: OAK_SAPLING
+          amount: 4
+        max-uses: 16

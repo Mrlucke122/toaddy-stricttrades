@@ -1,0 +1,41 @@
+# plugin by Mrlucke (https://github.com/Mrlucke122)
+# support - https://discord.gg/pDzQyj2QY3
+
+trades:
+  # Mix vanilla Minecraft trades with custom trades
+  mix-vanilla-trades: true
+
+  mix-vanilla-settings:
+    # Filter professions: BLACKLIST, WHITELIST or OFF
+    professions:
+      mode: OFF # default: OFF
+      list:
+        - LIBRARIAN
+        - ARMORER
+
+    # Villager levels allowed to generate vanilla trades
+    # 1 = Novice, 5 = Master
+    allowed-levels:
+      - 1
+      - 2
+      - 3
+
+    limits:
+      # Maximum vanilla trades per villager level
+      max-vanilla-trades-per-level: 1 # default: 1
+
+      # Chance for a slot to become a vanilla trade (0.0–1.0)
+      vanilla-trade-chance: 0.3 # default: 0.3
+
+      # Custom trades are added first; vanilla fills empty slots
+      prioritize-custom: true # default: true
+
+    modifiers:
+      # Vanilla trade price multiplier
+      price-multiplier: 1.5 # default: 1.5
+
+      # Disable XP rewards from vanilla trades
+      disable-exp-reward: false # default: false
+
+      # Disable curing discounts for vanilla trades
+      disable-discount: true # default: true

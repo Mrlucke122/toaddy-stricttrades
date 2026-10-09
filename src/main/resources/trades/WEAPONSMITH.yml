@@ -1,0 +1,81 @@
+# ==============================================================================
+# VILLAGER TRADES CONFIGURATION / КОНФІГУРАЦІЯ ТОРГІВЛІ СЕЛЯН
+# ==============================================================================
+# [EN] Instructions:
+# - levels            : Root configuration node containing villager levels. Keys ('1', '2') are villager levels
+# - random-trades-min : Minimum number of trades selected when leveling up
+# - random-trades-max : Maximum number of trades selected when leveling up
+# - trades            : List of possible trades for this level
+#   - id              : A unique name for each trade. Used only for quick error tracking. Does not affect mechanics in any way
+#   - result          : The item the player receives (material, amount)
+#   - cost-1    : The first item required from the player
+#   - cost-2    : (Optional) The second item required. Remove if not needed
+#   - max-uses : Maximum number of times this trade can be used before the villager needs to restock
+# Valid Materials: https://jd.papermc.io/paper/1.21.11/org/bukkit/Material.html
+# Note: 'material' strings are case-insensitive in the plugin
+#
+# [UA] Інструкція:
+# - levels            : Кореневий вузол. Ключі ('1', '2') — це рівні селянина
+# - random-trades-min : Мінімальна кількість торгів при отриманні рівня
+# - random-trades-max : Максимальна кількість торгів при отриманні рівня
+# - trades            : Список можливих торгів для цього рівня
+#   - id              : Унікальна назва кожного трейду. Використовується тільки для швидкого пошуку помилок. На ігрові механіки ніяк не впливає
+#   - result          : Предмет, який отримує гравець (material, amount)
+#   - cost-1    : Перший предмет, який вимагається від гравця
+#   - cost-2    : (Необов'язково) Другий предмет. Видалити, якщо не потрібен
+#   - max-uses : Максимальна кількість використань торгу до необхідності поповнення запасів селянином
+# Допустимі матеріали: https://jd.papermc.io/paper/1.21.11/org/bukkit/Material.html
+# Примітка: рядки, що позначають матеріали, не чутливі до регістру
+# ==============================================================================
+
+levels:
+  '1':
+    random-trades-min: 1
+    random-trades-max: 2
+    trades:
+
+      # Trade with one ingredient:
+      - id: "trade-1-emerald-and-recieve-12-bread"
+        cost-1:
+          material: EMERALD
+          amount: 1
+        result:
+          material: BREAD
+          amount: 6
+        max-uses: 12
+
+      # Trade with two ingredients:
+      - id: "wheat-to-emerald"
+        cost-1:
+          material: WHEAT
+          amount: 20
+        cost-2:
+          material: OAK_LOG
+          amount: 10
+        result:
+          material: EMERALD
+          amount: 1
+        max-uses: 16
+
+  '2':
+    random-trades-min: 2
+    random-trades-max: 2
+    trades:
+
+      - id: "crimea-is-a-part-of-ukraine"
+        cost-1:
+          material: EMERALD
+          amount: 1
+        result:
+          material: APPLE
+          amount: 4
+        max-uses: 16
+
+      - id: "emerald-to-oak-sapling"
+        cost-1:
+          material: EMERALD
+          amount: 3
+        result:
+          material: OAK_SAPLING
+          amount: 4
+        max-uses: 16

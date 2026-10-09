@@ -1,0 +1,17 @@
+name: ToaddyStrictTrades
+version: '1.0.0'
+main: me.mrlucke.toaddystricttrades.ToaddyStrictTrades
+api-version: '1.21'
+description: "High-performance plugin for total control over villager trade generation via strict YAML configurations"
+author: Mrlucke
+
+commands:
+  toaddy:
+    description: ToaddyStrictTrades administration command
+    usage: /toaddy StrictTrades reload
+    permission: toaddystricttrades.admin
+
+permissions:
+  toaddystricttrades.admin:
+    description: Allows administration of ToaddyStrictTrades
+    default: op
